@@ -19,7 +19,7 @@ const updateConfig = (config: any): Promise<any> => {
     console.error("Неправильный файл конфигурации. Отсутствует поле 'displays'")
   }
 
-  return config.displays.map((display: any) => {
+  config.displays = config.displays.map((display: any) => {
     if (!display.elements) return display
 
     display.elements = display.elements.map((element: any) => {
@@ -39,6 +39,8 @@ const updateConfig = (config: any): Promise<any> => {
 
     return display
   })
+
+  return config;
 }
 
 export const updateConfigFile: UpdateConfigFile = async () => {
