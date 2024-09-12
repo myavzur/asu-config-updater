@@ -27,7 +27,7 @@ const updateConfig = (config: any): Promise<any> => {
 
       element.presets = element.arraySrc.map((src: string, idx: number) => ({
         id: idx,
-        name: `${element.name}_${idx}`,
+        name: `${element.name}_${idx + 1}`,
         src,
         type: 'img'
       }))
